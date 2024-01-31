@@ -1,0 +1,6 @@
+func closest_bullet_to_mouse():
+	var mouse_pos = get_global_mouse_position()
+	var closest_bullet = bullets.reduce(func(b1,b2):
+		return b1 if (b1.position.distance_to(mouse_pos) < b2.position.distance_to(mouse_pos)) else b2)
+	return closest_bullet
+
